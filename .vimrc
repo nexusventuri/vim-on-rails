@@ -179,6 +179,7 @@ set autoindent
 let mapleader=","
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>d :NERDTree %:h<CR>
 map <Leader><Leader> :ZoomWin<CR>
 map <C-\> :tnext<CR>
 " Opens an edit command with the path of the currently edited file filled in
