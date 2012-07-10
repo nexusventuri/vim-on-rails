@@ -61,6 +61,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""
 " Searching
@@ -136,6 +137,14 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
+""""""""""""""""""""""""""""""""""""""""""
+" Set undofile (from vi > 4.3)
+""""""""""""""""""""""""""""""""""""""""""
+set undofile
+set undodir=$HOME/.vim/undo  " where to save undo histories
+set undolevels=10000         " How many undos
+set undoreload=10000         " number of lines to save for undo
+
 " Default color scheme
 silent! color fruit
 set background=light
@@ -153,9 +162,20 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 
+set autoindent
 """""""""""""""""""""""""""""""""""""""""""
 " KEYMAPS
 """""""""""""""""""""""""""""""""""""""""""
+" useful for presentations
+"map <Leader>1 :!git co f1<CR><CR>
+"map <Leader>2 :!git co f2<CR><CR>
+"map <Leader>3 :!git co f3<CR><CR>
+"map <Leader>4 :!git co f4<CR><CR>
+"map <Leader>a :!git co fa<CR><CR>
+"map <Leader>b :!git co fb<CR><CR>
+"map <Leader>c :!git co fc<CR><CR>
+"map <Leader>d :!git co fd<CR><CR>
+
 let mapleader=","
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>n :NERDTreeToggle<CR>
