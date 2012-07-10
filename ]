@@ -14,7 +14,6 @@ Bundle "L9"
 Bundle "FuzzyFinder"
 Bundle "mileszs/ack.vim"
 Bundle "Conque-Shell"
-Bundle "rainbow.zip"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
 Bundle "tpope/vim-haml"
@@ -39,7 +38,6 @@ Bundle "matchit.zip"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "danchoi/ri_vim"
 Bundle "maude.vim"
-Bundle "scala"
 Bundle "ewiplayer/vim-scala"
 
 """""""""""""""""""""""""""""""""""""
@@ -136,9 +134,6 @@ let g:syntastic_quiet_warnings=1
 set modeline
 set modelines=10
 
-" Default color scheme
-silent! color fruit
-set background=light
 
 " Directories for swp files
 set backupdir=~/.vim/swaps
