@@ -204,6 +204,8 @@ map <C-s> :w<CR>
 map <C-A-s> :wall<CR>
 
 """""""""""""""""""""""""""""""""""""""""""
-" AUTOSAVE
+" SAVE
 """""""""""""""""""""""""""""""""""""""""""
 autocmd FocusLost * :wall
+" Remove trailing whitespaces
+autocmd BufWritePre *.py :%s/\s\+$//e
