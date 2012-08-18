@@ -46,7 +46,7 @@ Bundle "scalacommenter.vim"
 Bundle "Scala-argument-formatter"
 Bundle "Scala-Java-Edit"
 Bundle "vim-scala"
-
+Bundle "Txtfmt-The-Vim-Highlighter"
 """""""""""""""""""""""""""""""""""""
 " General configuration
 """""""""""""""""""""""""""""""""""""
@@ -211,6 +211,6 @@ map <C-A-s> :wall<CR>
 """""""""""""""""""""""""""""""""""""""""""
 " SAVE
 """""""""""""""""""""""""""""""""""""""""""
-autocmd FocusLost * :wall
+autocmd BufLeave,FocusLost silent! :wall
 " Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
