@@ -208,9 +208,20 @@ imap <C-A-SPACE> <C-x><C-]>
 map <C-s> :w<CR>
 map <C-A-s> :wall<CR>
 
+
 """""""""""""""""""""""""""""""""""""""""""
 " SAVE
 """""""""""""""""""""""""""""""""""""""""""
+
 autocmd BufLeave,FocusLost silent! :wall
 " Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+"""""""""""""""""""""""""""""""""""""""""""
+" Gui options
+"""""""""""""""""""""""""""""""""""""""""""
+
+if has("gui_running")
+  set guioptions-=T
+endif
