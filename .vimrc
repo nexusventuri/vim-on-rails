@@ -207,6 +207,7 @@ imap <C-SPACE> <C-p>
 imap <C-A-SPACE> <C-x><C-]>
 map <C-s> :w<CR>
 map <C-A-s> :wall<CR>
+inoremap jj <ESC>
 
 
 """""""""""""""""""""""""""""""""""""""""""
