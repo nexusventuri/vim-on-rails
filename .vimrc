@@ -203,11 +203,14 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 map <C-N> :FufCoverageFile<CR>
 map <A-N> :FufBuffer<CR>
+map <A-d> :Gdiff<CR>
+map <A-s> :Gstatus<CR>
+map <A-n> :FufBuffer<CR>
+inoremap jj <ESC>l
 imap <C-SPACE> <C-p>
 imap <C-A-SPACE> <C-x><C-]>
 map <C-s> :w<CR>
 map <C-A-s> :wall<CR>
-inoremap jj <ESC>
 
 
 """""""""""""""""""""""""""""""""""""""""""
