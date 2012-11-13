@@ -201,7 +201,7 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-map <C-N> :FufCoverageFile<CR>
+map <C-N> <ESC>:FufCoverageFile<CR>
 map <A-N> :FufBuffer<CR>
 map <A-d> :Gdiff<CR>
 map <A-s> :Gstatus<CR>
@@ -210,7 +210,15 @@ inoremap jj <ESC>l
 imap <C-SPACE> <C-p>
 imap <C-A-SPACE> <C-x><C-]>
 map <C-s> :w<CR>
+map <C-j> <C-w>j
+map <C-h> <C-w>h
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 map <C-A-s> :wall<CR>
+map <Leader>k :leftabove split<CR>
+map <Leader>j :rightbelow split<CR>
+map <Leader>h :leftabove vsplit<CR>
+map <Leader>l :rightbelow vsplit<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -228,4 +236,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 if has("gui_running")
   set guioptions-=T
+  set guioptions-=m
+  set guifont=Bitstream_Vera_Sans_Mono:h9:cANSI
 endif
