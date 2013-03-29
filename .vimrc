@@ -14,6 +14,7 @@ Bundle "L9"
 Bundle "FuzzyFinder"
 Bundle "Markdown"
 Bundle "Markdown-syntax"
+Bundle "Solarized"
 Bundle "mileszs/ack.vim"
 Bundle "Conque-Shell"
 Bundle "rainbow.zip"
@@ -35,9 +36,11 @@ Bundle "vim-scripts/ZoomWin"
 Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-endwise"
+Bundle 'Valloric/YouCompleteMe'
 Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/syntastic"
 Bundle "matchit.zip"
+Bundle "godlygeek/tabular"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "danchoi/ri_vim"
 Bundle "maude.vim"
@@ -108,9 +111,10 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
+  au BufNewFile,BufRead *.qml setf javascript
 endif
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=72
@@ -151,8 +155,8 @@ set undolevels=10000         " How many undos
 set undoreload=10000         " number of lines to save for undo
 
 " Default color scheme
-silent! color fruit
 set background=light
+silent! color fruit
 
 " Directories for swp files
 set backupdir=~/.vim/swaps
@@ -228,7 +232,7 @@ map <Leader>l :rightbelow vsplit<CR>
 autocmd BufLeave,FocusLost silent! :wall
 " Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
-
+"silent! :!start C:\Windows\System32\ctags.exe -R
 
 """""""""""""""""""""""""""""""""""""""""""
 " Gui options
@@ -239,3 +243,18 @@ if has("gui_running")
   set guioptions-=m
   set guifont=Bitstream_Vera_Sans_Mono:h9:cANSI
 endif
+
+function! SaveShader()
+  :%s/\s*\\n\\$//
+  :%s/$/\\n\\/
+  :Tabularize /\\n\\/l10
+  :$s/\s*\\n\\//
+endfunction
+
+function! LoadShader()
+  :%s/\s*\\n\\$//
+  :setf c
+endfunction
+
+autocmd BufWritePre *.fsh call SaveShader()
+autocmd BufWritePost *.fsh call LoadShader()
